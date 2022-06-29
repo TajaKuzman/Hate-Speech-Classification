@@ -5,7 +5,7 @@ The spreadsheets (the original one from the Google Sheets - *Hate-Speech-Classif
 
 First, I prepared the data into the format that is required for experiments with Transformers - see the code in *Hate-Speech-Classification/1-Data-Preparation.ipynb*. The following interventions were performed:
 * Only comments are used, posts are discarded (as they are not annotated).
-* "-*-*-*- " which indicates whether the comment is a reply to another comment was deleted from the comment text
+* `-*-*-*- ` which indicates whether the comment is a reply to another comment was deleted from the comment text
 * empty comments are discarded
 * in the binary classification of hate speech (with two classes: acceptable and hate speech), instances that are annotated with both labels at once are discarded
 
@@ -25,7 +25,9 @@ The text length in no. of words (of the entire dataset, used for the two experim
 
 I performed 2 experiments:
 * Experiment 1: binary classification of comments annotated for implicitness of hate speech. We have two classes: implicit hate speech (1) and explicit hate speech (0)
-* Experiment 2: binary classification of hate speech. We have two classes: acceptable speech (0) and hate speech (1).
+* Experiment 2: binary classification of hate speech. We have two classes: acceptable speech (0) and hate speech (1)
+
+The code for the experiments is available on Kaggle: https://www.kaggle.com/tajakuz/hate-speech-classification
 
 ### Experiment 1: Implicitness
 
