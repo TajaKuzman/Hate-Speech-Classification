@@ -1,7 +1,7 @@
 # Hate-Speech-Classification
  Experiments with binary classification of hate speech and its implicitness.
 
-The spreadsheets (the original one from the Google Sheets - *Hate-Speech-Classification/data/Implicit hate speech.xlsx* and the ones that I prepared are located in the folder **data**).
+The spreadsheets (the original one from the Google Sheets - *Hate-Speech-Classification/data/Implicit hate speech.xlsx* and the ones that I prepared) are located in the folder **data**.
 
 First, I prepared the data into the format that is required for experiments with Transformers - see the code in *Hate-Speech-Classification/1-Data-Preparation.ipynb*. The following interventions were performed:
 * Only comments are used, posts are discarded (as they are not annotated).
