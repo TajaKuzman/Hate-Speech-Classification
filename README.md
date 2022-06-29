@@ -27,7 +27,10 @@ I performed 2 experiments:
 * Experiment 1: binary classification of comments annotated for implicitness of hate speech. We have two classes: implicit hate speech (1) and explicit hate speech (0)
 * Experiment 2: binary classification of hate speech. We have two classes: acceptable speech (0) and hate speech (1)
 
-The code for the experiments is available on Kaggle: https://www.kaggle.com/tajakuz/hate-speech-classification
+The code for the experiments is available on Kaggle:
+
+* Experiment 1: https://www.kaggle.com/tajakuz/implicit-hate-speech-classification
+* Experiment 2: 
 
 ### Experiment 1: Implicitness
 
@@ -38,6 +41,15 @@ The statistics for the dataset:
 | Implicit | 329 |0.576|
 | Explicit | 242 |0.424|
 | Total | 571 |1|
+
+Results:
+
+| model   |   microF1 |   macroF1 |   accuracy |
+|:--------|----------:|----------:|-----------:|
+| dummy   |  0.575581 |  0.365314 |      0.576 |
+| BERT    |  0.651163 |  0.641667 |      0.651 |
+
+We can see that BERT performs better than the baseline.
 
 ### Experiment 2: Hate Speech
 
