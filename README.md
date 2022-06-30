@@ -30,7 +30,7 @@ I performed 2 experiments:
 The code for the experiments is available on Kaggle:
 
 * Experiment 1: https://www.kaggle.com/tajakuz/implicit-hate-speech-classification
-* Experiment 2: 
+* Experiment 2: https://www.kaggle.com/code/tajakuz/hate-speech-binary-classification
 
 ### Experiment 1: Implicitness
 
@@ -58,3 +58,16 @@ We can see that BERT performs better than the baseline.
 | Acceptable speech | 2853 |0.518|
 | Hate speech       | 2652 |0.482|
 | Total | 5505 |1|
+
+Results:
+
+| model   |   microF1 |   macroF1 |   accuracy |   epoch |
+|:--------|----------:|----------:|-----------:|--------:|
+| dummy   |  0.51816  |  0.341308 |      0.518 |     nan |
+| BERT    |  0.76816  |  0.768088 |      0.768 |      10 |
+| BERT    |  0.77724  |  0.776816 |      0.777 |      20 |
+| BERT    |  0.768765 |  0.768166 |      0.769 |      30 |
+
+The Transformer model outperforms the baseline for 15 points (in micro F1)which is significant.
+
+The results show that these experiments gave better results than prediction of implicitness. However, here, the model was trained on 10x more instance. The experimentation with different numbers of epochs revealed that training the model for 20 epochs gives the best results.
