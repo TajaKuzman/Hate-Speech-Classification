@@ -63,13 +63,33 @@ I experimented with different numbers of epochs and the results revealed the opt
 | Hate speech       |                 2619 |0.481|
 | Total | 5440 |1|
 
-Results:
+#### General results
 
 | model   |   microF1 |   macroF1 |   accuracy |
 |:--------|----------:|----------:|-----------:|
 | dummy   |  0.518382 |  0.341404 |      0.518 |
-| BERT    |  0.765319 |  0.765304 |      0.765 |
+| BERT    |  0.762255 |  0.762253 |      0.762 |
+
+<img style="width:80%" src="results/Confusion-matrix-binary-hate-speech-general.png">
 
 The Transformer model outperforms the baseline for 15 points (in micro F1), which is significant.
 
 The results show that these experiments gave better results than prediction of implicitness. However, here, the model was trained on 10x more instances. The experimentation with different numbers of epochs revealed that training the model for 20 epochs gives the best results.
+
+#### Results for each type of hate speech (implicit/explicit)
+
+No. of implicit instances in test data: 81 (25% out of all implicit instances)
+No. of explicit instance in test data: 62 (26% out of all explicit instances)
+
+| type of HS   |   microF1 |   macroF1 |   accuracy |
+|:--------|----------:|----------:|-----------:|
+| implicit   |  0.790 |  0.441 |      0.790 |
+| explicit    |  0.871 |  0.466 |       0.871 |
+
+<img style="width:80%" src="results/Confusion-matrix-binary-hate-speech-explicit hate speech.png">
+
+<img style="width:80%" src="results/Confusion-matrix-binary-hate-speech-implicit hate speech.png">
+
+The results show that hate speech prediction is easier on explicit hate speech.
+
+
