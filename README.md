@@ -72,4 +72,4 @@ Results:
 
 The Transformer model outperforms the baseline for 15 points (in micro F1), which is significant.
 
-The results show that these experiments gave better results than prediction of implicitness. However, here, the model was trained on 10x more instance. The experimentation with different numbers of epochs revealed that training the model for 20 epochs gives the best results.
+The results show that these experiments gave better results than prediction of implicitness. However, here, the model was trained on 10x more instances. The experimentation with different numbers of epochs revealed that training the model for 20 epochs gives the best results.
