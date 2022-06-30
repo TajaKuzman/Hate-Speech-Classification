@@ -57,7 +57,7 @@ I experimented with different numbers of epochs and the results revealed the opt
 
 <img style="width:80%" src="results/Confusion-matrix-implicit-classification.png">
 
-Interestingly, the prediction of implicit instances seems to be much easier than explicit instances.
+Interestingly, the prediction of implicit instances seems to be much easier than explicit instances. However, we have much more implicit instances in our data than explicit ones which could impact the results.
 
 
 ### Experiment 2: Hate Speech
