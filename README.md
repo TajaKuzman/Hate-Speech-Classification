@@ -49,11 +49,16 @@ Results:
 | model   |   microF1 |   macroF1 |   accuracy |
 |:--------|----------:|----------:|-----------:|
 | dummy   |  0.575581 |  0.365314 |      0.576 |
-| BERT    |  0.645349 |  0.633442 |      0.645 |
+| BERT    |  0.633721 |  0.606807 |      0.634 |
 
 We can see that BERT performs better than the baseline.
 
 I experimented with different numbers of epochs and the results revealed the optimum number is 60.
+
+<img style="width:80%" src="results/Confusion-matrix-implicit-classification.png">
+
+Interestingly, the prediction of implicit instances seems to be much easier than explicit instances.
+
 
 ### Experiment 2: Hate Speech
 
@@ -76,10 +81,13 @@ The Transformer model outperforms the baseline for 15 points (in micro F1), whic
 
 The results show that these experiments gave better results than prediction of implicitness. However, here, the model was trained on 10x more instances. The experimentation with different numbers of epochs revealed that training the model for 20 epochs gives the best results.
 
+From the confusion matrix we can see that more acceptable texts are misclassified as hate speech than vice versa.
+
 #### Results for each type of hate speech (implicit/explicit)
 
 No. of implicit instances in test data: 81 (25% out of all implicit instances)
-No. of explicit instance in test data: 62 (26% out of all explicit instances)
+
+No. of explicit instances in test data: 62 (26% out of all explicit instances)
 
 | type of HS   |   microF1 |   macroF1 |   accuracy |
 |:--------|----------:|----------:|-----------:|
