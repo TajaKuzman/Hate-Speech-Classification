@@ -7,19 +7,21 @@ First, I prepared the data into the format that is required for experiments with
 * Only comments are used, posts are discarded (as they are not annotated).
 * `-*-*-*- ` which indicates whether the comment is a reply to another comment was deleted from the comment text
 * empty comments are discarded
+* duplicated comments are discarded
 * in the binary classification of hate speech (with two classes: acceptable and hate speech), instances that are annotated with both labels at once are discarded
 
 The text length in no. of words (of the entire dataset, used for the two experiments):
 
-| count | 5771 |
-|-------|-------------|
-| mean  | 33.884422   |
-| std   | 55.508957   |
-| min   | 1.000000    |
-| 25%   | 8.000000    |
-| 50%   | 18.000000   |
-| 75%   | 38.000000   |
-| max   | 1387.000000 |
+
+| count |     5706      |
+|-----|-----|
+| mean  |       34.0135 |
+| std   |       55.6401 |
+| min   |        1      |
+| 25%   |        8      |
+| 50%   |       18      |
+| 75%   |       38      |
+| max   |     1387      |
 
 ## Experiments
 
@@ -47,27 +49,27 @@ Results:
 | model   |   microF1 |   macroF1 |   accuracy |
 |:--------|----------:|----------:|-----------:|
 | dummy   |  0.575581 |  0.365314 |      0.576 |
-| BERT    |  0.651163 |  0.641667 |      0.651 |
+| BERT    |  0.645349 |  0.633442 |      0.645 |
 
 We can see that BERT performs better than the baseline.
+
+I experimented with different numbers of epochs and the results revealed the optimum number is 60.
 
 ### Experiment 2: Hate Speech
 
 |Label|Count|Perc|
-|-------------------|------|-----|
-| Acceptable speech | 2853 |0.518|
-| Hate speech       | 2652 |0.482|
-| Total | 5505 |1|
+|:------------------|---------------------:|---------------------:|
+| Acceptable speech |                 2821 |0.519|
+| Hate speech       |                 2619 |0.481|
+| Total | 5440 |1|
 
 Results:
 
-| model   |   microF1 |   macroF1 |   accuracy |   epoch |
-|:--------|----------:|----------:|-----------:|--------:|
-| dummy   |  0.51816  |  0.341308 |      0.518 |     nan |
-| BERT    |  0.76816  |  0.768088 |      0.768 |      10 |
-| BERT    |  0.77724  |  0.776816 |      0.777 |      20 |
-| BERT    |  0.768765 |  0.768166 |      0.769 |      30 |
+| model   |   microF1 |   macroF1 |   accuracy |
+|:--------|----------:|----------:|-----------:|
+| dummy   |  0.518382 |  0.341404 |      0.518 |
+| BERT    |  0.765319 |  0.765304 |      0.765 |
 
-The Transformer model outperforms the baseline for 15 points (in micro F1)which is significant.
+The Transformer model outperforms the baseline for 15 points (in micro F1), which is significant.
 
 The results show that these experiments gave better results than prediction of implicitness. However, here, the model was trained on 10x more instance. The experimentation with different numbers of epochs revealed that training the model for 20 epochs gives the best results.
