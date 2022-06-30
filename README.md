@@ -11,10 +11,10 @@ First, I prepared the data into the format that is required for experiments with
 
 The text length in no. of words (of the entire dataset, used for the two experiments):
 
-| count | 5782.000000 |
+| count | 5771 |
 |-------|-------------|
-| mean  | 33.821861   |
-| std   | 55.474635   |
+| mean  | 33.884422   |
+| std   | 55.508957   |
 | min   | 1.000000    |
 | 25%   | 8.000000    |
 | 50%   | 18.000000   |
@@ -55,6 +55,6 @@ We can see that BERT performs better than the baseline.
 
 |Label|Count|Perc|
 |-------------------|------|-----|
-| Acceptable speech | 2864 |0.519|
-| Hate speech       | 2652 |0.481|
-| Total | 5516 |1|
+| Acceptable speech | 2853 |0.518|
+| Hate speech       | 2652 |0.482|
+| Total | 5505 |1|
