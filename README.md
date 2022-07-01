@@ -98,11 +98,10 @@ The results show that these experiments gave better results than prediction of i
 <img style="width:80%" src="results/Confusion-matrix-binary-hate-speech-general-annotation-split.png">
 
 
-From the confusion matrix we can see that more acceptable texts are misclassified as hate speech than vice versa.
+From the confusion matrix we can see that a higher percentage of acceptable texts is misclassified as hate speech than vice versa.
 
 #### Results for each type of hate speech (implicit/explicit)
 
-Scores for explicit hate speech: Macro f1: 0.457, Micro f1: 0.843, Accuracy: 0.843, Precision: 1.0, Recall: 0.8429752066115702, HS label F1 score: 0.914798206278027
 
 | type of HS   |   microF1 |   macroF1 |   accuracy |   precision |   recall |   HS label F1 score |
 |:--------|----------:|----------:|-----------:|-----------:|-----------:|-----------:|
