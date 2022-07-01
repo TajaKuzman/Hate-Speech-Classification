@@ -44,6 +44,8 @@ The statistics for the dataset:
 | Explicit | 242 |0.424|
 | Total | 571 |1|
 
+I used only the data that was annotated for implicitness and belongs to hate speech and split it into train and test split in a 70:30 manner based on a stratified split.
+
 Results:
 
 | model   |   microF1 |   macroF1 |   accuracy |
@@ -68,31 +70,44 @@ Interestingly, the prediction of implicit instances seems to be much easier than
 | Hate speech       |                 2619 |0.481|
 | Total | 5440 |1|
 
+
 #### General results
+
+1. Results when I split the hate speech dataset in a 70:30 manner based on a stratified split (based on the label distribution):
 
 | model   |   microF1 |   macroF1 |   accuracy |
 |:--------|----------:|----------:|-----------:|
 | dummy   |  0.518382 |  0.341404 |      0.518 |
 | BERT    |  0.762255 |  0.762253 |      0.762 |
 
-<img style="width:80%" src="results/Confusion-matrix-binary-hate-speech-general.png">
+<img style="width:80%" src="results/Confusion-matrix-binary-hate-speech-general-stratified-split.png">
 
-The Transformer model outperforms the baseline for 15 points (in micro F1), which is significant.
+2. Results when I used all the data that was not yet annotated with implicitness as train data (4391 instances) and all annotated data (hate speech and acceptable speech instances) as test data (1049).
+
+| model   |   microF1 |   macroF1 |   accuracy |
+|:--------|----------:|----------:|-----------:|
+| dummy   |  0.456625 |  0.313482 |      0.457 |
+| BERT    |  0.743565 |  0.742212 |      0.744 |
+
+We can see the dummy classifier performs worse than before, because the label distribution in both splits is not the same.
+
+Although the Transformer model performs slightly worse than in the first case, it outperforms the baseline for 29 points (in micro F1), which is significant.
 
 The results show that these experiments gave better results than prediction of implicitness. However, here, the model was trained on 10x more instances. The experimentation with different numbers of epochs revealed that training the model for 20 epochs gives the best results.
+
+<img style="width:80%" src="results/Confusion-matrix-binary-hate-speech-general-annotation-split.png">
+
 
 From the confusion matrix we can see that more acceptable texts are misclassified as hate speech than vice versa.
 
 #### Results for each type of hate speech (implicit/explicit)
 
-No. of implicit instances in test data: 81 (25% out of all implicit instances)
+Scores for explicit hate speech: Macro f1: 0.457, Micro f1: 0.843, Accuracy: 0.843, Precision: 1.0, Recall: 0.8429752066115702, HS label F1 score: 0.914798206278027
 
-No. of explicit instances in test data: 62 (26% out of all explicit instances)
-
-| type of HS   |   microF1 |   macroF1 |   accuracy |
-|:--------|----------:|----------:|-----------:|
-| implicit   |  0.790 |  0.441 |      0.790 |
-| explicit    |  0.871 |  0.466 |       0.871 |
+| type of HS   |   microF1 |   macroF1 |   accuracy |   precision |   recall |   HS label F1 score |
+|:--------|----------:|----------:|-----------:|-----------:|-----------:|-----------:|
+| implicit   |  0.683 |  0.406 |      0.683 |1.0|0.683| 0.812|
+| explicit    |  0.843 |  0.457 |      0.843 |1.0|0.843| 0.915|
 
 <img style="width:80%" src="results/Confusion-matrix-binary-hate-speech-explicit hate speech.png">
 
