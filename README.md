@@ -104,6 +104,7 @@ From the confusion matrix we can see that a higher percentage of acceptable text
 
 #### Results for each type of hate speech (implicit/explicit)
 
+Here, one instance was removed from the implicit dataset, because it was acceptable speech, falsely annotated with implicitness.
 
 | type of HS   |   microF1 |   macroF1 |   accuracy |   precision |   recall |   HS label F1 score |
 |:--------|----------:|----------:|-----------:|-----------:|-----------:|-----------:|
