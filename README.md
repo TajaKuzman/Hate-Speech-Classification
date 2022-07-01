@@ -34,7 +34,7 @@ The code for the experiments is available on Kaggle:
 * Experiment 1: https://www.kaggle.com/tajakuz/implicit-hate-speech-classification
 * Experiment 2: https://www.kaggle.com/code/tajakuz/hate-speech-binary-classification
 
-### Experiment 1: Implicitness
+## Experiment 1: Implicitness
 
 The statistics for the dataset:
 
@@ -62,7 +62,7 @@ I experimented with different numbers of epochs and the results revealed the opt
 Interestingly, the prediction of implicit instances seems to be much easier than explicit instances. However, we have much more implicit instances in our data than explicit ones which could impact the results.
 
 
-### Experiment 2: Hate Speech
+## Experiment 2: Hate Speech
 
 |Label|Count|Perc|
 |:------------------|---------------------:|---------------------:|
@@ -71,9 +71,9 @@ Interestingly, the prediction of implicit instances seems to be much easier than
 | Total | 5440 |1|
 
 
-#### General results
+### Results on a stratified split of all data
 
-1. Results when I split the hate speech dataset in a 70:30 manner based on a stratified split (based on the label distribution):
+Results when I split the hate speech dataset in a 70:30 manner based on a stratified split (based on the label distribution):
 
 | model   |   microF1 |   macroF1 |   accuracy |
 |:--------|----------:|----------:|-----------:|
@@ -82,7 +82,9 @@ Interestingly, the prediction of implicit instances seems to be much easier than
 
 <img style="width:80%" src="results/Confusion-matrix-binary-hate-speech-general-stratified-split.png">
 
-2. Results when I used all the data that was not yet annotated with implicitness as train data (4391 instances) and all annotated data (hate speech and acceptable speech instances) as test data (1049).
+### Results on all newly annotated data in test split
+
+Results when I used all the data that was not yet annotated with implicitness as train data (4391 instances) and all annotated data (hate speech and acceptable speech instances) as test data (1049).
 
 | model   |   microF1 |   macroF1 |   accuracy |
 |:--------|----------:|----------:|-----------:|
