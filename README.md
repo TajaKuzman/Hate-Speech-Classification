@@ -111,6 +111,8 @@ Here, one instance was removed from the implicit dataset, because it was accepta
 | implicit   |  0.683 |  0.406 |      0.683 |1.0|0.683| 0.812|
 | explicit    |  0.843 |  0.457 |      0.843 |1.0|0.843| 0.915|
 
+The dummy classifier (using "the most frequent category" strategy) predicts 0 (acceptable speech) to all classes, so analysing its performance on each type of hate speech is useless - all scores are 0.
+
 <img style="width:80%" src="results/Confusion-matrix-binary-hate-speech-explicit hate speech.png">
 
 <img style="width:80%" src="results/Confusion-matrix-binary-hate-speech-implicit hate speech.png">
